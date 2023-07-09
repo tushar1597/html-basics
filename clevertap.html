@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    function loadScript(url, onloadFunction) {
+      if (document.querySelector('[src="' + url + '"]')) {
+        return;
+      }
+
+      var newScript = document.createElement("script");
+      newScript.onerror = loadError;
+      newScript.type = "text/javascript";
+      if (onloadFunction) {
+        newScript.onload = onloadFunction;
+      }
+      newScript.src = url;
+      document.body.appendChild(newScript);
+    }
+
+    function loadError(onLoadError) {
+      console.log("loadError", onLoadError);
+    }
+
+    loadScript(
+      "https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js",
+      function () {
+        console.log("Load Clevertap Script Tag: Clevertap-Loaded");
+      }
+    );
+  </script>
+</html>

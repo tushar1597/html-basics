@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .marquee {
+        margin: 2rem 0;
+        font-size: 8vw;
+        overflow: hidden;
+      }
+
+      .marquee span {
+        display: inline-block;
+        white-space: nowrap;
+        color: #00112c;
+        width: 40vw;
+        text-shadow: 40vw 0 currentColor, calc(40vw * 2) 0 currentColor,
+          calc(40vw * 3) 0 currentColor, calc(40vw * 4) 0 currentColor;
+
+        will-change: transform;
+        animation: marquee 2.5s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <input type="checkbox" /><label>Auto animate</label> -->
+
+    <div class="marquee">
+      <span>Showreel</span>
+    </div>
+
+    <!-- <div class="marquee marquee--long" style="--tw: 189ch; --ad: 12s">
+      <span
+        >Windows 8 and Windows RT are focused on your life—your friends and
+        family, your apps, and your stuff. With new things like the Start
+        screen, charms and a Microsoft account, you can spend less time
+        searching and more time doing.
+      </span>
+    </div> -->
+  </body>
+</html>
